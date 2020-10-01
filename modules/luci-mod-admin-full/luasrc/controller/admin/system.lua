@@ -13,10 +13,10 @@ function index()
 
 	entry({"admin", "system", "admin"}, cbi("admin_system/admin"), _("Administration"), 2)
 
-	if fs.access("/bin/opkg") then
-		entry({"admin", "system", "packages"}, post_on({ exec = "1" }, "action_packages"), _("Software"), 10)
-		entry({"admin", "system", "packages", "ipkg"}, form("admin_system/ipkg"))
-	end
+-- 	if fs.access("/bin/opkg") then
+-- 		entry({"admin", "system", "packages"}, post_on({ exec = "1" }, "action_packages"), _("Software"), 10)
+-- 		entry({"admin", "system", "packages", "ipkg"}, form("admin_system/ipkg"))
+-- 	end
 
 	entry({"admin", "system", "startup"}, form("admin_system/startup"), _("Startup"), 45)
 	--entry({"admin", "system", "crontab"}, form("admin_system/crontab"), _("Scheduled Tasks"), 46)
@@ -32,15 +32,15 @@ function index()
 		entry({"admin", "system", "leds"}, cbi("admin_system/leds"), _("<abbr title=\"Light Emitting Diode\">LED</abbr> Configuration"), 60)
 	end
 
-	entry({"admin", "system", "flashops"}, call("action_flashops"), _("Backup / Flash Firmware"), 70)
-	entry({"admin", "system", "flashops", "reset"}, post("action_reset"))
-	entry({"admin", "system", "flashops", "backup"}, post("action_backup"))
-	entry({"admin", "system", "flashops", "backupmtdblock"}, post("action_backupmtdblock"))
-	entry({"admin", "system", "flashops", "backupfiles"}, form("admin_system/backupfiles"))
+-- 	entry({"admin", "system", "flashops"}, call("action_flashops"), _("Backup / Flash Firmware"), 70)
+-- 	entry({"admin", "system", "flashops", "reset"}, post("action_reset"))
+-- 	entry({"admin", "system", "flashops", "backup"}, post("action_backup"))
+-- 	entry({"admin", "system", "flashops", "backupmtdblock"}, post("action_backupmtdblock"))
+-- 	entry({"admin", "system", "flashops", "backupfiles"}, form("admin_system/backupfiles"))
 
 	-- call() instead of post() due to upload handling!
-	entry({"admin", "system", "flashops", "restore"}, call("action_restore"))
-	entry({"admin", "system", "flashops", "sysupgrade"}, call("action_sysupgrade"))
+-- 	entry({"admin", "system", "flashops", "restore"}, call("action_restore"))
+-- 	entry({"admin", "system", "flashops", "sysupgrade"}, call("action_sysupgrade"))
 
 	entry({"admin", "system", "reboot"}, template("admin_system/reboot"), _("Reboot"), 90)
 	entry({"admin", "system", "reboot", "call"}, post("action_reboot"))
